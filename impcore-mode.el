@@ -8,18 +8,11 @@
 		map)
 	"Keymap for impcore major mode")
 
+;;make sure the mode is automatically loaded for .imp files
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.imp\\'" . impcore-mode))
 
-;;Might need to insert open-paren versions too: (if != if
-;;(defconst impcore-font-lock-keywords-1
-;;	(list
-;;		'("\\<" . (regex-opt '("if" "define" "while" "begin" "set" "print" "val" "use" "check-expect" "check-error") t) . "\\>" . font-lock-variable-name-face))
-;;		'("\\<\\if\\val\\define\\\\|use\\|check-expect\\(check-error\\(CTIVITY\\|PPLICATION\\)\\|DATA\\|MODEL\\|PARTICIPANT\\|T\\(OOL_LIST\\|RANSITION\\)\\|WORKFLOW\\)\\|MODEL\\|PARTICIPANT\\|T\\(OOL_LIST\\|RANSITION\\)\\|WORKFLOW\\)\\>" . font-lock-builtin-face))
-;;   '("\\('\\w*'\\)" . font-lock-variable-name-face))
-;;		"Minimal highlighting expressions for impcore mode")
-
-
+;;define some basic highlighying for impcore keywords.
 (defconst impcore-font-lock-keywords-1
     (list
 	'("\\<\\(if\\|define\\|val\\|use\\|check-expect\\|check-error\\|set\\|while\\|begin\\)\\>" . font-lock-builtin-face))
