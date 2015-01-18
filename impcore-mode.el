@@ -15,7 +15,10 @@
 ;;define some basic highlighying for impcore keywords.
 (defconst impcore-font-lock-keywords-1
     (list
-	'("\\<\\(if\\|define\\|val\\|use\\|check-expect\\|check-error\\|set\\|while\\|begin\\)\\>" . font-lock-builtin-face))
+	'("\\<\\(if\\|define\\|val\\|use\\|set\\|while\\|begin\\)\\>" . font-lock-keyword-face)
+	'("\\<\\(or\\|and\\|not\\|mod\\|check-expect\\|check-error\\|+\\|-\\|/\\|*\\|=\\|<\\|>\\|<=\\|>=\\)\\>" . font-lock-builtin-face))
+;;	'("(\\w*" . font-lock-function-name-face))
+;;	'("\\w*" . font-lock-variable-name-face))
     "Minimal highlighting expressions for impcore mode")
 
 (defvar impcore-font-lock-keywords impcore-font-lock-keywords-1 "Default highlighting for impcore mode")
@@ -29,7 +32,7 @@
 		(modify-syntax-entry ?\n ">" st)
 	st)
 	"Syntax table for impcore-mode")
-
+	
 (defun impcore-mode ()
 	"Major mode for editing impcore language files"
 	(interactive)
